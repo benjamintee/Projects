@@ -1,0 +1,22 @@
+---
+title: "Projects"
+subtitle: "Write-ups of the analysis, mapping and modelling work I have done."
+listing:
+  # `grid` = cards with thumbnails. Other options: `default`, `table`.
+  type: grid
+  grid-columns: 2
+  # Every project lives in its own folder as `index.qmd`.
+  contents: "*/index.qmd"
+  sort: "date desc"
+  categories: cloud            # sidebar tag cloud; use `true` for a plain list
+  sort-ui: [date, title]
+  filter-ui: true
+  fields: [image, date, title, description, reading-time, categories]
+  image-height: "200px"
+  feed: true                   # generates projects/index.xml (RSS)
+page-layout: full
+title-block-banner: false
+format:
+  html:
+    toc: false
+---

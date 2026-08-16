@@ -1,0 +1,34 @@
+---
+title: "Housing Affordability and the Commuter Belt"
+description: |
+  Tracing how the price-to-earnings ratio has shifted outward from central
+  London between 2010 and 2025.
+author: "Benjamin Tee"
+date: "2026-02-18"
+categories: [Housing, Python, Visualisation]
+image: thumbnail.svg
+image-alt: "Small multiple maps of housing affordability ratios over time"
+draft: false
+---
+
+## The question
+
+Affordability pressure has not stayed still. This project maps the movement of
+the affordability frontier — the ring beyond which the median home costs less
+than eight times median earnings — over fifteen years.
+
+## Data and method
+
+ONS house price to workplace-based earnings ratios at local authority level,
+joined to boundary files and animated as a small-multiple sequence.
+
+## Finding
+
+The frontier moved outward by roughly 14 km between 2010 and 2022, then
+stalled. The stall coincides with the rate rises of 2023 rather than with any
+change in supply.
+
+## Reproducing
+
+All code is in the accompanying repository; the notebook runs end-to-end from
+the raw ONS spreadsheet.

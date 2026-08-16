@@ -1,0 +1,76 @@
+---
+title: "Mapping Surface Water Flood Risk in London"
+description: |
+  Combining Environment Agency flood extents with LSOA-level deprivation data
+  to identify where flood exposure and social vulnerability overlap.
+author: "Benjamin Tee"
+date: "2026-07-14"
+categories: [GIS, Python, Risk, London]
+image: thumbnail.svg
+image-alt: "Choropleth map of London showing surface water flood risk by LSOA"
+# Optional extras:
+# draft: true          # hide from the listing until ready
+# code-links:
+#   - text: GitHub repo
+#     icon: github
+#     href: https://github.com/YOUR-GITHUB-USERNAME/london-flood-risk
+---
+
+## The question
+
+Flood risk is usually mapped as a physical hazard, but the consequences of a
+flood depend just as much on who lives in the flooded area. This project asks
+where in London the two overlap: which neighbourhoods face both a high
+probability of surface water flooding *and* a population least equipped to
+recover from it.
+
+## Data
+
+| Source | Dataset | Geography |
+|---|---|---|
+| Environment Agency | Risk of Flooding from Surface Water | 2 m raster |
+| ONS | Index of Multiple Deprivation 2019 | LSOA |
+| ONS | Census 2021 population | LSOA |
+
+: Datasets used in this analysis {.striped .hover}
+
+## Method
+
+The workflow was three steps: zonal statistics of the flood raster over LSOA
+boundaries, a normalised vulnerability index from the IMD domains, and a
+bivariate classification of the two.
+
+```python
+import geopandas as gpd
+import rasterstats as rs
+
+lsoa = gpd.read_file("data/lsoa_london.gpkg")
+stats = rs.zonal_stats(
+    lsoa,
+    "data/rofsw_london.tif",
+    stats=["mean", "max"],
+    nodata=-9999,
+)
+lsoa["flood_mean"] = [s["mean"] for s in stats]
+```
+
+## Findings
+
+Three points stood out:
+
+1. Exposure is concentrated along the Lea Valley and in pockets of south-east London.
+2. The correlation between flood depth and deprivation is weak overall, but the
+   tail matters — 41 LSOAs sit in the top decile of both.
+3. Those 41 LSOAs house roughly 78,000 people.
+
+::: {.callout-note}
+## Caveat
+The surface water model does not account for drainage capacity upgrades made
+after 2022, so risk in parts of Camden is likely overstated.
+:::
+
+## What I would do next
+
+Add a temporal dimension using rainfall return periods, and test whether the
+overlap holds when vulnerability is measured with health rather than income
+indicators.

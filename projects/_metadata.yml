@@ -1,0 +1,20 @@
+# Defaults applied to every project post in this folder.
+# Anything set here can be overridden in an individual post's front matter.
+
+title-block-banner: false
+toc: true
+toc-depth: 3
+toc-title: "On this page"
+
+# Show the author/date block at the top of each post
+date-format: "D MMMM YYYY"
+
+format:
+  html:
+    code-fold: false
+    code-tools: true
+    fig-cap-location: bottom
+    citations-hover: true
+
+# Keeps citations working if you add a .bib later
+# bibliography: ../references.bib

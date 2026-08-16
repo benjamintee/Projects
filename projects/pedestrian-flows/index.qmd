@@ -1,0 +1,43 @@
+---
+title: "Modelling Pedestrian Flows Around Transport Hubs"
+description: |
+  A space syntax and network-centrality approach to predicting footfall
+  around eleven London Underground stations.
+author: "Benjamin Tee"
+date: "2026-05-02"
+categories: [Networks, R, Mobility]
+image: thumbnail.svg
+image-alt: "Street network coloured by betweenness centrality"
+---
+
+## The question
+
+Can street-network structure alone predict where people walk? This project
+compares modelled centrality against observed footfall counts to see how far
+geometry gets you before land use has to be added.
+
+## Approach
+
+Angular betweenness centrality was computed on the OS Open Roads network
+within an 800 m radius of each station, then regressed against Transport for
+London's pedestrian count sites.
+
+```r
+library(sfnetworks)
+library(tidygraph)
+
+net <- as_sfnetwork(streets, directed = FALSE) |>
+  activate("edges") |>
+  mutate(betweenness = centrality_edge_betweenness(weights = angular_cost))
+```
+
+## Result
+
+Centrality alone explained 54% of the variance in observed counts. Adding
+retail frontage density lifted this to 71%, which suggests network form is
+necessary but far from sufficient.
+
+## Limitations
+
+The count sites are unevenly distributed and skew towards commercial streets,
+so the model is probably optimistic for residential areas.

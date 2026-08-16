@@ -1,0 +1,48 @@
+---
+title: "Benjamin Tee"
+subtitle: "MSc Urban Spatial Science · Centre for Advanced Spatial Analysis, UCL"
+about:
+  template: trestles
+  image: images/profile.jpg
+  image-shape: rounded
+  image-width: 14em
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/benjamintee
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/teebenjamin/
+    - icon: envelope
+      text: Email
+      href: mailto:benjamin.tee.cm@gmail.com
+format:
+  html:
+    toc: false
+---
+
+Welcome! 
+
+I am currently an MSc Urban Spatial Science student at [The Bartlett Centre for Advanced Spatial Analysis (CASA)](https://www.ucl.ac.uk/bartlett/casa), University College London.
+
+As a leader in the Singapore Public Service, I am committed to advancing data-driven and evidence-based policymaking. I strongly believe in the role of public service–led innovation, and the use of econometric and data science methods to develop and uncover insights that inform effective and forward-looking policy decisions.
+
+My research interests is in cities and the data they generate — spatial analysis, geographic data science, and the visualisation of urban processes. This site collects the projects I have built with the methods and the code behind it.
+
+Head to [Projects](projects/index.qmd) to find out more.
+
+## Interests
+
+- Geographic data science and spatial statistics
+- Demographic trends and population dynamics
+- Urban mobility and accessibility
+- Econometrics and causal analysis
+- Cartography and interactive web mapping
+
+## Education
+
+**MSc Urban Spatial Science** — University College London, 2026
+Centre for Advanced Spatial Analysis (CASA)
+
+**BBM in Business Management** — Singapore Management University, 2010–2014
+Double Major in Economics and Finance

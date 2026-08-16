@@ -1,0 +1,53 @@
+project:
+  type: website
+  output-dir: _site
+
+# Render results are cached so that GitHub Actions does not need R/Python
+# installed. Run `quarto render` locally, then commit the `_freeze/` folder.
+execute:
+  freeze: auto
+
+website:
+  title: "Benjamin Tee"
+  description: "Urban data science projects and visualisation."
+  site-url: "https://benjamintee.github.io"
+  favicon: images/favicon.svg
+  open-graph: true
+  twitter-card: true
+
+  navbar:
+    background: light
+    pinned: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: projects/index.qmd
+        text: Projects
+    right:
+      - icon: github
+        href: https://github.com/benjamintee
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/teebenjamin/
+        aria-label: LinkedIn
+      - icon: envelope
+        href: mailto:benjamin.tee.cm@gmail.com
+        aria-label: Email
+
+  page-footer:
+    left: "© 2026 Benjamin Tee"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme/custom.scss]
+      dark: [darkly, theme/custom-dark.scss]
+    css: theme/styles.css
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-overflow: wrap
+    link-external-newwindow: true
+    grid:
+      body-width: 900px

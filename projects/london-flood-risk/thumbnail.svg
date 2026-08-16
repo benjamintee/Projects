@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Flood risk placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b3a5c"/>
+      <stop offset="100%" stop-color="#2f6ea8"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+  <g fill="none" stroke="rgba(255,255,255,.20)" stroke-width="3">
+    <circle cx="240" cy="180" r="120"/><circle cx="360" cy="300" r="70"/>
+    <circle cx="920" cy="180" r="150"/><circle cx="820" cy="620" r="95"/>
+    <circle cx="1060" cy="640" r="60"/><circle cx="160" cy="660" r="85"/>
+  </g>
+  <text x="600" y="390" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="62" font-weight="700" fill="#ffffff">Flood risk</text>
+  <text x="600" y="445" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" fill="rgba(255,255,255,.78)">placeholder — swap in your own image</text>
+</svg>
